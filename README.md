@@ -1,5 +1,5 @@
 # ABOUT PROJECT
-This is a [frontendmentor]() challenge. coded and solved using
+This is a [frontendmentor](https://www.frontendmentor.io/challenges/3column-preview-card-component-pH92eAR2-) challenge. coded and solved using
 
 ## LANGUAGES AND METHODOLOGIES
 - html
