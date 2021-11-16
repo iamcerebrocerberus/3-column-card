@@ -1,0 +1,67 @@
+@use "abstracts" as *;
+//resets
+*,*::before,*::after{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+body,main,footer,div,h1,h2,h3,p,a,button{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: none;
+    font-size: 100%;
+    text-decoration: none;
+}
+
+img{
+    display: block;
+    max-width: 100%;
+}
+
+/*typography*/
+.c-card{
+    &__head{
+        font-family: 'Big Shoulders Display',sans-serif;
+        font-size: pxCon(30,rem);
+        text-transform: uppercase;
+        font-weight: 700;
+        @include respond-to('small'){
+            font-size: pxCon(40,rem);
+        }
+
+        @include respond-to('large'){
+            font-size: pxCon(41,rem);
+        }
+    }
+    &__txt{
+        font-family: 'Lexend Deca', sans-serif;
+        font-weight: 400;
+        line-height: 1.6;
+        font-size: pxCon(13,rem);
+        @include respond-to('small'){
+            font-size: pxCon(16,rem);
+        }
+        @include respond-to('large'){
+            font-size: pxCon(15,rem);
+        }
+    }
+
+    &__button{
+        font-family: 'Lexend Deca',sans-serif;
+        font-size: pxCon(13,rem);
+        @include respond-to('small'){
+            font-size: pxCon(13,rem);
+        }
+    }
+}
+
+footer{
+    display: none;
+    @include respond-to('large'){
+        display: block;
+        margin-top: 1rem;
+        font-size: .8rem;
+        padding: 1rem;
+    }
+}

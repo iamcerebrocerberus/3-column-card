@@ -1,0 +1,107 @@
+@use "abstracts" as *;
+@use "utilities" as *;
+
+.c-card{
+    padding: pxCon(30,rem);
+    @include respond-to('small'){
+        padding: pxCon(30,rem);
+    }
+    @include respond-to('large'){
+        padding: 2.4rem;
+    }
+    @include respond-to('x-large'){
+        padding: 3rem;
+    }
+
+    &__img{
+        width: pxCon(54,rem);
+        @include respond-to('small'){
+            width: pxCon(65,rem);
+        }
+        @include respond-to('large'){
+            width: pxCon(70,rem);
+        }
+    }
+
+    &__head{
+        @include get-color(color,neutral,vry-light-gray);
+        margin-top: pxCon(18,rem);
+        @include respond-to('small'){
+            margin-top: pxCon(20,rem);
+        }
+        @include respond-to('large'){
+            margin-top: pxCon(35,rem);
+        }
+        
+    }
+
+    &__txt{
+        @include get-color(color,neutral,trans-white);
+        margin-top: pxCon(11,rem);
+        @include respond-to('small'){
+            margin-top: pxCon(15,rem);
+        }
+        @include respond-to('large'){
+            margin-top: pxCon(17,rem);
+            margin-bottom: auto;
+        }
+        @include respond-to('x-large'){
+            margin-top: pxCon(37,rem);
+        }
+    }
+
+    &__button{
+        padding: pxCon(11,rem) pxCon(18,rem);
+        border-radius: pxCon(25,rem);
+        margin-top: pxCon(14,rem);
+        @include respond-to('small'){
+            padding: pxCon(14,rem) pxCon(30,rem);
+            margin-top: pxCon(70,rem);
+        }
+        @include respond-to('large'){
+            width: 9rem;
+        }
+    }
+    &:nth-child(1){
+        @extend .u-bg-oran-100;
+        border-radius: pxCon(8,rem) pxCon(8,rem) 0 0;
+        @include respond-to('large'){
+            border-radius: pxCon(8,rem) 0 0 pxCon(8,rem)
+        }
+
+        button{
+            @include get-color(color,primary,bri-orange);
+            &:hover{
+                @include get-color(color,neutral,trans-white);
+                @include get-color(background,primary,bri-orange);
+                outline: 2px solid white;
+            }
+        }
+    }
+    &:nth-child(2){
+        @extend .u-bg-cyan-500;
+        button{
+            @include get-color(color,primary,dark-cyan);
+            &:hover{
+                @include get-color(color,neutral,trans-white);
+                @include get-color(background,primary,dark-cyan);
+                outline: 1px solid white;
+            }
+        }
+    }
+    &:nth-child(3){
+        @extend .u-bg-cyan-900;
+        border-radius: 0 0 pxCon(8,rem) pxCon(8,rem);
+        @include respond-to('large'){
+            border-radius: 0 pxCon(8,rem) pxCon(8,rem) 0;
+        }
+        button{
+            @include get-color(color,primary,vry-dark-cyan);
+            &:hover{
+                @include get-color(color,neutral,trans-white);
+                @include get-color(background,primary,vry-dark-cyan);
+                outline: 1px solid white;
+            }
+        }
+    }
+}

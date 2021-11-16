@@ -1,0 +1,26 @@
+@use "abstracts" as *;
+
+.u-bg-oran-100{
+    @include get-color(background,primary,bri-orange);
+
+}
+
+.u-bg-cyan-500{
+    @include get-color(background,primary,dark-cyan)
+}
+.u-bg-cyan-900{
+    @include get-color(background,primary,vry-dark-cyan);
+}
+
+
+.sr-only{
+    position: absolute;
+    top: auto;
+    left: -10000px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+
+

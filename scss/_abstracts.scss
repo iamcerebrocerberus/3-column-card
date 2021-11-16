@@ -1,0 +1,70 @@
+@use "sass:math";
+@use "sass:map";
+
+//breakpoints
+$breakpoints: (
+    'small': '25em', //375px
+    'medium': '33.33333em', //500px
+    'large': '42.533333em', //638px
+    'x-large': '62.66666em'//940px
+);
+
+//colors
+$colors: (
+    "primary":(
+        "bri-orange": hsl(31, 77%, 52%),
+        "dark-cyan": hsl(184, 100%, 22%),
+        "vry-dark-cyan": hsl(179, 100%, 13%)
+    ),
+    "neutral":(
+        "trans-white": hsla(0, 0%, 100%, 0.75),
+        "vry-light-gray": hsl(0, 0%, 95%),
+    )
+);
+
+
+//font imports
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+
+
+//px to rem and em convertor
+@function pxCon($value,$unit){
+    $rem : "rem";
+    $em : "em";
+    $value: math.div($value,15); // 1em or rem == 15px
+    @if $value and ($unit == $rem){
+        @return #{$value}rem;
+    }@else if $value and ($unit == $em){
+        @return #{$value}em;
+    }@else {
+        @error "first arg must be only value(px) and second arg must be unit ['rem' or 'em']";
+    }
+}
+
+//color getter mixin
+@mixin get-color($prop,$key,$val){
+    $val: map.get($colors,$key,$val);
+    #{$prop}: $val;
+}
+
+//media query mixing
+@mixin respond-to($val){
+    $val: map.get($breakpoints,$val);
+    @media screen and (min-width: $val){
+        @content;
+    }
+}
+
+
+//flex center mixin
+@mixin flex-all($dir,$justify,$align){
+    display: flex;
+    flex-direction: $dir;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin flex-dir($dir){
+    flex-direction: $dir;
+}

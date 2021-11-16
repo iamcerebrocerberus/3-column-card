@@ -1,0 +1,29 @@
+@use "abstracts" as *;
+@use "utilities" as *;
+
+body{
+    padding: pxCon(50,rem) pxCon(16,rem);
+    @include get-color(background-color,neutral,vry-light-gray);
+    @include respond-to('medium'){
+        min-height: 100vh;
+        @include flex-all(column,center,center);
+    }
+}
+
+.o-cards-layout{
+    @include respond-to('medium'){
+        max-width: pxCon(500,rem);
+    }
+    @include respond-to('large'){
+        display: flex;
+        @include flex-dir(row);
+        max-width: pxCon(917,rem);
+    }
+}
+
+.c-card{
+    @include respond-to('large'){
+        display: flex;
+        flex-direction: column;
+    }
+}
